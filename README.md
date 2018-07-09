@@ -1,0 +1,1 @@
+# wxSmallProject
