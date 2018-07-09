@@ -19,14 +19,58 @@
 /* 水平垂直居中 */
 /* 超出部分出省略号 */
 /* 多行文本超出部分省略号 */
-.content {
+.swiper-container {
+  position: relative;
+}
+.swiper-container .swiper {
+  height: 100px;
+}
+.swiper-container .swiper .img {
+  width: 100%;
+  height: 100%;
+}
+.swiper-container .dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20rpx;
   display: flex;
-  align-items: center;
   justify-content: center;
+  z-index: 9;
 }
-.starContent {
-  padding: 50px 50px 0px 50px;
+.swiper-container .dots .dot {
+  margin: 0 8rpx;
+  width: 14rpx;
+  height: 14rpx;
+  background: #fff;
+  border-radius: 8rpx;
 }
-.buttonContent {
-  padding: 50px;
+.swiper-container .dots .dot.active {
+  width: 24rpx;
+  background: #fff;
+}
+.top_tip .left_icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #FCB300;
+  text-align: center;
+  line-height: 50px;
+}
+.top_tip .left_icon2 {
+  background-color: #FF7360;
+}
+.top_tip .left_icon3 {
+  background-color: #39CCC5;
+}
+.top_tip .text text {
+  font-size: 16px;
+  color: #313338;
+}
+.top_tip .text view {
+  color: #9C9FA4;
+  font-size: 12px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }

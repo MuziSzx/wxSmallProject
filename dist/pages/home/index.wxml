@@ -1,9 +1,138 @@
-<view>
-  <view class="starContent" wx:if="{{ isShow }}">
-    <ui-star _pid="{{_pid}}"></ui-star>
-  </view>
+<view class="swiper-container">
+  <swiper circular autoplay interval="5000" duration="500" bindchange="swiperChange" class="swiper">
+    <block wx:for="{{items4}}" wx:key="unique">
+      <swiper-item>
+        <image src="{{item}}" class="img" />
+      </swiper-item>
+    </block>
+  </swiper>
 
-  <view class="buttonContent">
-    <button type="primary" bindtap="starShow">创建评分控件</button>
+  <view class="dots">
+    <block wx:for="{{items4}}" wx:key="unique">
+      <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+    </block>
   </view>
 </view>
+
+<ui-tabs index="{{ current11 }}" bounce="{{false}}" bindchange="handleChange11" _pid="{{_pid}}">
+  <ui-tab _pid="{{_pid}}">工具</ui-tab>
+  <ui-tab _pid="{{_pid}}">电商</ui-tab>
+  <ui-tab _pid="{{_pid}}">游戏</ui-tab>
+  <ui-tab _pid="{{_pid}}">娱乐</ui-tab>
+  <ui-tab _pid="{{_pid}}">选项卡五</ui-tab>
+  <ui-tab _pid="{{_pid}}">选项卡六</ui-tab>
+  <ui-tab _pid="{{_pid}}">选项卡七</ui-tab>
+  <ui-tab _pid="{{_pid}}">选项卡八</ui-tab>
+</ui-tabs>
+
+<swiper class="content" current="{{ current11 }}" bindchange="handleContentChange11">
+  <swiper-item>
+    <view class="top_tip">
+      <view hover-class="touchui-hover" class="ui-row ui-row-border-bottom" style="height:80px;">
+        <view class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 80px;">
+          <view class="ui-col-content align-center valign-middle">
+            <view class="left_icon left_icon1">
+              <span type="api-access" color="#fff" size="20" class="ui-icon icon-api-access" style="color: #fff;font-size: 20px;"></span>
+            </view>
+          </view>
+        </view>
+        <view class="text ui-col ui-col-align-left align-left valign-middle" style="padding-left: 10px; padding-right: 10px;">
+          <view class="ui-col-content align-left valign-middle">
+            <view style="width: 100%;">
+              <view class="ui-row" style="height:30px;">
+                <view class="ui-col ui-col-align-left align-left valign-middle" style="">
+                  <view class="ui-col-content align-left valign-middle">
+                    <text>票房总结</text>
+                  </view>
+                </view>
+                <view class="ui-col ui-col-align-right align-right valign-middle" style="padding-right: 10px;flex:0 0 100px;">
+                  <view class="ui-col-content align-right valign-middle">
+                    <text>09-18</text>
+                  </view>
+                </view>
+              </view>
+              <view>第37周|总票房8.11亿较上周上涨4.38%，《猩猿崛起》突破票房10亿</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view hover-class="touchui-hover" class="ui-row ui-row-border-bottom" style="height:80px;">
+        <view class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 80px;">
+          <view class="ui-col-content align-center valign-middle">
+            <view class="left_icon left_icon2">
+              <span type="api-network" color="#fff" size="20" class="ui-icon icon-api-network" style="color: #fff;font-size: 20px;"></span>
+            </view>
+          </view>
+        </view>
+        <view class="text ui-col ui-col-align-left align-left valign-middle" style="padding-left: 10px; padding-right: 10px;">
+          <view class="ui-col-content align-left valign-middle">
+            <view style="width: 100%;">
+              <view class="ui-row" style="height:30px;">
+                <view class="ui-col ui-col-align-left align-left valign-middle" style="">
+                  <view class="ui-col-content align-left valign-middle">
+                    <text>广播</text>
+                  </view>
+                </view>
+                <view class="ui-col ui-col-align-right align-right valign-middle" style="padding-right: 10px;flex:0 0 100px;">
+                  <view class="ui-col-content align-right valign-middle">
+                    <text>08-28</text>
+                  </view>
+                </view>
+              </view>
+              <view>总票房9.60亿较上周 下降30.64%，《战狼2》突破票房10亿</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view hover-class="touchui-hover" class="ui-row ui-row-border-bottom" style="height:80px;">
+        <view class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 80px;">
+          <view class="ui-col-content align-center valign-middle">
+            <view class="left_icon left_icon3">
+              <span type="api-configure" color="#fff" size="20" class="ui-icon icon-api-configure" style="color: #fff;font-size: 20px;"></span>
+            </view>
+          </view>
+        </view>
+        <view class="text ui-col ui-col-align-left align-left valign-middle" style="padding-left: 10px; padding-right: 10px;">
+          <view class="ui-col-content align-left valign-middle">
+            <view style="width: 100%;">
+              <view class="ui-row" style="height:30px;">
+                <view class="ui-col ui-col-align-left align-left valign-middle" style="">
+                  <view class="ui-col-content align-left valign-middle">
+                    <text>票房总结</text>
+                  </view>
+                </view>
+                <view class="ui-col ui-col-align-right align-right valign-middle" style="padding-right: 10px;flex:0 0 100px;">
+                  <view class="ui-col-content align-right valign-middle">
+                    <text>08-11</text>
+                  </view>
+                </view>
+              </view>
+              <view>本周悬疑《心理罪》、喜剧《鲛珠传》、动作《上船下套》等多部电影在电影院上映。</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </swiper-item>
+  <swiper-item>
+    内容二
+  </swiper-item>
+  <swiper-item>
+    内容三
+  </swiper-item>
+  <swiper-item>
+    内容四
+  </swiper-item>
+  <swiper-item>
+    内容五
+  </swiper-item>
+  <swiper-item>
+    内容六
+  </swiper-item>
+  <swiper-item>
+    内容七
+  </swiper-item>
+  <swiper-item>
+    内容八
+  </swiper-item>
+</swiper>

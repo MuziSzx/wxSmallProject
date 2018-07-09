@@ -6,7 +6,7 @@
     "backgroundTextStyle": "dark",
     "backgroundColor": "#efefef",
     "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTitleText": "TouchUI",
+    "navigationBarTitleText": "小程序导航",
     "navigationBarTextStyle": "black"
   },
   "networkTimeout": {

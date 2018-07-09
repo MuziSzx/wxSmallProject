@@ -1,41 +1,204 @@
 <template>
-  <view>
-    <view class="starContent" wx:if="{{ isShow }}">
-      <ui-star></ui-star>
-    </view>
+ <view class="swiper-container">
+    <swiper circular autoplay interval="5000" duration="500" bindchange="swiperChange" class="swiper">
+        <block wx:for="{{items4}}" wx:key="unique">
+            <swiper-item>
+                <image src="{{item}}" class="img"></image>
+            </swiper-item>
+        </block>
+    </swiper>
 
-    <view class="buttonContent">
-      <button type="primary" bindtap="starShow">创建评分控件</button>
-    </view> 
-  </view>
+    <view class="dots">
+        <block wx:for="{{items4}}" wx:key="unique">
+            <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+        </block>
+    </view>
+</view>
+
+<ui-tabs index="{{ current11 }}" bounce="{{false}}"  bindchange="handleChange11">
+    <ui-tab>工具</ui-tab>
+    <ui-tab>电商</ui-tab>
+    <ui-tab>游戏</ui-tab>
+    <ui-tab>娱乐</ui-tab>
+    <ui-tab>选项卡五</ui-tab>
+    <ui-tab>选项卡六</ui-tab>
+    <ui-tab>选项卡七</ui-tab>
+    <ui-tab>选项卡八</ui-tab>
+</ui-tabs>
+
+<swiper class="content" current="{{ current11 }}" bindchange="handleContentChange11">
+    <swiper-item>
+        <view class="top_tip">
+    <ui-row height="80" border-bottom hover-class="touchui-hover">
+        <ui-col width="80" align="center" vertical-align="middle">
+            <view class="left_icon left_icon1">
+                <ui-icon type="api-access" color="#fff" size="20"></ui-icon>
+            </view>
+        </ui-col>
+        <ui-col class="text" align="left" vertical-align="middle" space="20">
+            <view style="width: 100%;">
+                <ui-row height="30">
+                    <ui-col align="left" vertical-align="middle">
+                        <text>票房总结</text>
+                    </ui-col>
+                    <ui-col align="right" width="100" vertical-align="middle" space-right="10">
+                        <text>09-18</text>
+                    </ui-col>
+                </ui-row>
+                <view>第37周|总票房8.11亿较上周上涨4.38%，《猩猿崛起》突破票房10亿</view>
+            </view>
+        </ui-col>
+    </ui-row>
+    <ui-row height="80" border-bottom hover-class="touchui-hover">
+        <ui-col width="80" align="center" vertical-align="middle">
+            <view class="left_icon left_icon2">
+                <ui-icon type="api-network" color="#fff" size="20"></ui-icon>
+            </view>
+        </ui-col>
+        <ui-col class="text" align="left" vertical-align="middle" space="20">
+            <view style="width: 100%;">
+                <ui-row height="30">
+                    <ui-col align="left" vertical-align="middle">
+                        <text>广播</text>
+                    </ui-col>
+                    <ui-col align="right" width="100" vertical-align="middle" space-right="10">
+                        <text>08-28</text>
+                    </ui-col>
+                </ui-row>
+                <view>总票房9.60亿较上周 下降30.64%，《战狼2》突破票房10亿</view>
+            </view>
+        </ui-col>
+    </ui-row>
+    <ui-row height="80" border-bottom hover-class="touchui-hover">
+        <ui-col width="80" align="center" vertical-align="middle">
+            <view class="left_icon left_icon3">
+                <ui-icon type="api-configure" color="#fff" size="20"></ui-icon>
+            </view>
+        </ui-col>
+        <ui-col class="text" align="left" vertical-align="middle" space="20" >
+            <view style="width: 100%;">
+                <ui-row height="30">
+                    <ui-col align="left" vertical-align="middle">
+                        <text>票房总结</text>
+                    </ui-col>
+                    <ui-col align="right" width="100" vertical-align="middle" space-right="10">
+                        <text>08-11</text>
+                    </ui-col>
+                </ui-row>
+                <view>本周悬疑《心理罪》、喜剧《鲛珠传》、动作《上船下套》等多部电影在电影院上映。</view>
+            </view>
+        </ui-col>
+    </ui-row>
+</view>
+    </swiper-item>
+    <swiper-item>
+        内容二
+    </swiper-item>
+    <swiper-item>
+        内容三
+    </swiper-item>
+    <swiper-item>
+        内容四
+    </swiper-item>
+    <swiper-item>
+        内容五
+    </swiper-item>
+    <swiper-item>
+        内容六
+    </swiper-item>
+    <swiper-item>
+        内容七
+    </swiper-item>
+    <swiper-item>
+        内容八
+    </swiper-item>
+</swiper>
+
 </template>
 
 <script>
 export default {
-  config: {
-    navigationBarTitleText: '首页',
-    backgroundColor: '#F4F4F4',
-    navigationBarTextStyle: 'black'
-  },
-  data: {
-    isShow:false
-  },
-  starShow () {
-    this.setData({ 
-      isShow: true
-    })
-  }
+    data :{
+        current11: 0,
+        items4:['http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+        'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
+        'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg']
+        
+      
+    },
+    handleChange11 (e) {
+        let index = e.detail.index
+        this.setData({
+          current11:index
+        })
+    },
+    handleContentChange11 (e) {
+        let current = e.detail.current
+        this.setData({
+          current11:current
+        })
+    }
 }
 </script>
 
 <style lang="less">
-.content{
-  .mix-flex-center();
+// 自定义小圆点
+.swiper-container{
+  position: relative;
 }
-.starContent{
-  padding:50px 50px 0px 50px;
+.swiper-container .swiper{
+  height: 100px;
 }
-.buttonContent{
-  padding:50px;
+.swiper-container .swiper .img{
+  width: 100%;
+  height: 100%;
+}
+.swiper-container .dots{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20rpx;
+  display: flex;
+  justify-content: center;
+  z-index:9;
+}
+.swiper-container .dots .dot{
+  margin: 0 8rpx;
+  width: 14rpx;
+  height: 14rpx;
+  background: #fff;
+  border-radius: 8rpx;
+}
+.swiper-container .dots .dot.active{
+  width: 24rpx;
+  background: #fff;
+}
+
+.top_tip{
+    .left_icon{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color:#FCB300; 
+        text-align: center;
+        line-height: 50px;
+    }
+    .left_icon2{
+        background-color: #FF7360;
+    }
+    .left_icon3{
+        background-color: #39CCC5;
+    }
+    .text{
+        text{
+            font-size: 16px;
+            color: #313338;
+        }
+        view{
+            color: #9C9FA4;
+            font-size: 12px;
+            .mix-text-overflow();
+        }
+    }
 }
 </style>
