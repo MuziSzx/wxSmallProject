@@ -1,6 +1,6 @@
 <template>
  <view class="swiper-container">
-    <swiper circular autoplay interval="5000" duration="500" bindchange="swiperChange" class="swiper">
+    <swiper circular autoplay interval="5000" duration="500"  class="swiper">
         <block wx:for="{{items4}}" wx:key="unique">
             <swiper-item>
                 <image src="{{item}}" class="img"></image>
@@ -14,88 +14,162 @@
         </block>
     </view>
 </view>
-
+<view>
 <ui-tabs index="{{ current11 }}" bounce="{{false}}"  bindchange="handleChange11">
     <ui-tab>工具</ui-tab>
     <ui-tab>电商</ui-tab>
     <ui-tab>游戏</ui-tab>
     <ui-tab>娱乐</ui-tab>
-    <ui-tab>选项卡五</ui-tab>
-    <ui-tab>选项卡六</ui-tab>
-    <ui-tab>选项卡七</ui-tab>
-    <ui-tab>选项卡八</ui-tab>
+    <ui-tab>附近</ui-tab>
+    <ui-tab>游戏</ui-tab>
+    <ui-tab>游戏</ui-tab>
+    <ui-tab>游戏</ui-tab>
 </ui-tabs>
+</view>
 
-<swiper class="content" current="{{ current11 }}" bindchange="handleContentChange11">
+<swiper class="content" current="{{ current11 }}" bindchange="handleContentChange11" >
     <swiper-item>
         <view class="top_tip">
     <ui-row height="80" border-bottom hover-class="touchui-hover">
         <ui-col width="80" align="center" vertical-align="middle">
-            <view class="left_icon left_icon1">
-                <ui-icon type="api-access" color="#fff" size="20"></ui-icon>
+            <view class="left_icon">
+                <image style="width:50px; height:50px;" class='img'  src='{{quwei}}' data-src="{{quwei}}" ></image>
             </view>
         </ui-col>
         <ui-col class="text" align="left" vertical-align="middle" space="20">
             <view style="width: 100%;">
                 <ui-row height="30">
                     <ui-col align="left" vertical-align="middle">
-                        <text>票房总结</text>
+                        <text>趣味视力表</text>
                     </ui-col>
                     <ui-col align="right" width="100" vertical-align="middle" space-right="10">
-                        <text>09-18</text>
+                        <button class="userin" data-show="{{ true }}" bindtap="openPopup5">体验</button>
                     </ui-col>
                 </ui-row>
-                <view>第37周|总票房8.11亿较上周上涨4.38%，《猩猿崛起》突破票房10亿</view>
+                <view style="width:70%">有趣好玩的视力表，明星视力表、吃货视力表！</view>
             </view>
         </ui-col>
     </ui-row>
+        </view>
+         <view class="top_tip">
     <ui-row height="80" border-bottom hover-class="touchui-hover">
         <ui-col width="80" align="center" vertical-align="middle">
-            <view class="left_icon left_icon2">
-                <ui-icon type="api-network" color="#fff" size="20"></ui-icon>
+            <view class="left_icon">
+                <image style="width:50px; height:50px;" class='img'  src='{{wenyifu}}' data-src="{{wenyifu}}" ></image>
             </view>
         </ui-col>
         <ui-col class="text" align="left" vertical-align="middle" space="20">
             <view style="width: 100%;">
                 <ui-row height="30">
                     <ui-col align="left" vertical-align="middle">
-                        <text>广播</text>
+                        <text>文艺乎</text>
                     </ui-col>
-                    <ui-col align="right" width="100" vertical-align="middle" space-right="10">
-                        <text>08-28</text>
+                     <ui-col align="right" width="100" vertical-align="middle" space-right="10">
+                        <button class="userin" data-show="{{ true }}" bindtap="openPopup6">体验</button>
                     </ui-col>
                 </ui-row>
-                <view>总票房9.60亿较上周 下降30.64%，《战狼2》突破票房10亿</view>
+                <view style="width:70%">原来你和我一样，偶尔也会想要安静下来写点什么，或是翻着别人的五味杂陈轻笑人生，在繁杂又枯燥的日子里做着文艺的梦</view>
             </view>
         </ui-col>
     </ui-row>
+        </view>
+         <view class="top_tip">
     <ui-row height="80" border-bottom hover-class="touchui-hover">
         <ui-col width="80" align="center" vertical-align="middle">
-            <view class="left_icon left_icon3">
-                <ui-icon type="api-configure" color="#fff" size="20"></ui-icon>
+            <view class="left_icon ">
+                <image style="width:50px; height:50px;" class='img'  src='{{color}}' data-src="{{color}}" ></image>
             </view>
         </ui-col>
-        <ui-col class="text" align="left" vertical-align="middle" space="20" >
+        <ui-col class="text" align="left" vertical-align="middle" space="20">
             <view style="width: 100%;">
                 <ui-row height="30">
                     <ui-col align="left" vertical-align="middle">
-                        <text>票房总结</text>
+                        <text>全民颜色大作战</text>
                     </ui-col>
                     <ui-col align="right" width="100" vertical-align="middle" space-right="10">
-                        <text>08-11</text>
+                        <button class="userin" data-show="{{ true }}" bindtap="openPopup1">体验</button>
                     </ui-col>
                 </ui-row>
-                <view>本周悬疑《心理罪》、喜剧《鲛珠传》、动作《上船下套》等多部电影在电影院上映。</view>
+                <view style="width:70%">寓教于乐的猜颜色游戏，考验你的眼力哟</view>
             </view>
         </ui-col>
     </ui-row>
-</view>
+        </view>
+
+    <view class="top_tip">
+        <ui-row height="80" border-bottom hover-class="touchui-hover">
+            <ui-col width="80" align="center" vertical-align="middle">
+              <view class="left_icon">
+                     <image style="width:50px; height:50px;" class='img'  src='{{qiong}}' data-src="{{qiong}}" ></image>
+              </view>
+             </ui-col>
+         <ui-col class="text" align="left" vertical-align="middle" space="20">
+            <view style="width: 100%;">
+                <ui-row height="30">
+                    <ui-col align="left" vertical-align="middle">
+                        <text>史上最囧挑战Lite</text>
+                    </ui-col>
+                    <ui-col align="right" width="100" vertical-align="middle" space-right="10">
+                        <button class="userin" data-show="{{ true }}" bindtap="openPopup2">体验</button>
+                    </ui-col>
+                </ui-row>
+                <view style="width:70%">史上最囧的挑战，史上最囧的答题，史上最难的时间</view>
+            </view>
+        </ui-col>
+         </ui-row>
+     </view>
+
+    <view class="top_tip">
+        <ui-row height="80" border-bottom hover-class="touchui-hover">
+            <ui-col width="80" align="center" vertical-align="middle">
+              <view class="left_icon ">
+                   <image style="width:50px; height:50px;" class='img'  src='{{relation}}' data-src="{{relation}}" ></image>
+              </view>
+             </ui-col>
+         <ui-col class="text" align="left" vertical-align="middle" space="20">
+            <view style="width: 100%;">
+                <ui-row height="30">
+                    <ui-col align="left" vertical-align="middle">
+                        <text>立问人脉</text>
+                    </ui-col>
+                    <ui-col align="right" width="100" vertical-align="middle" space-right="10">
+                        <button class="userin" data-show="{{ true }}" bindtap="openPopup3">体验</button>
+                    </ui-col>
+                </ui-row>
+                <view style="width:70%">依据六度人脉原理，通过朋友传递快速找到解决问题的人，助力传播还可获得赏金酬谢。</view>
+            </view>
+        </ui-col>
+         </ui-row>
+     </view>
+
+     <view class="top_tip">
+        <ui-row height="80" border-bottom hover-class="touchui-hover">
+            <ui-col width="80" align="center" vertical-align="middle">
+              <view class="left_icon ">
+                     <image style="width:50px; height:50px;" class='img'  src='{{quest}}' data-src="{{quest}}" ></image>
+              </view>
+             </ui-col>
+         <ui-col class="text" align="left" vertical-align="middle" space="20">
+            <view style="width: 100%;">
+                <ui-row height="30">
+                    <ui-col align="left" vertical-align="middle">
+                        <text>小困惑</text>
+                    </ui-col>
+                    <ui-col align="right" width="100" vertical-align="middle" space-right="10">
+                        <button class="userin" data-show="{{ true }}" bindtap="openPopup4">体验</button>
+                    </ui-col>
+                </ui-row>
+                <view style="width:70%">世界这么大，困惑那么多。</view>
+            </view>
+        </ui-col>
+         </ui-row>
+     </view>
     </swiper-item>
     <swiper-item>
-        内容二
     </swiper-item>
     <swiper-item>
-        内容三
+      
+
     </swiper-item>
     <swiper-item>
         内容四
@@ -113,19 +187,251 @@
         内容八
     </swiper-item>
 </swiper>
+    <ui-popup show="{{ show5 }}" height="270" background="transparent">
+      <view class="popup5">
+        <ui-row height="40" border-bottom>
+          <ui-col vertical-align="middle" space-left="20">趣味视力表</ui-col>
+          <ui-col width="40" vertical-align="middle" align="center" bindtap="handleShow5">
+            <ui-icon type="x" size="18" color="#FC8950"></ui-icon>
+          </ui-col>
+        </ui-row>
+        <view class="title">有趣好玩的视力表，明星视力表、吃货视力表！</view>
+        <ui-row height="200">
+            
+         <view class='view_img' >
+            <image class='img' bindtap="previewImage" src='{{scene}}'></image>
+            </view>
+            <view wx:for="{{imgalist}}"wx:for-item="image"class="previewimg">  
+            <image src="{{image}}" style="width: 150px; height: 150px; background-color: #eeeeee;"  data-src="{{image}}" bindtap="previewImage" class='img'></image>  
+        </view>
+              
+        </ui-row>
+      </view>
+    </ui-popup>
 
+
+    <ui-popup show="{{ show6 }}" height="270" background="transparent">
+      <view class="popup6">
+        <ui-row height="40" border-bottom>
+          <ui-col vertical-align="middle" space-left="20">文艺乎</ui-col>
+          <ui-col width="40" vertical-align="middle" align="center" bindtap="handleShow6">
+            <ui-icon type="x" size="18" color="#FC8950"></ui-icon>
+          </ui-col>
+        </ui-row>
+        <view class="title">原来你和我一样，偶尔也会想要安静下来写点什么</view>
+        <ui-row height="200">  
+         <view class='view_img' >
+            <image style="width: 150px; height: 150px; background-color: #eeeeee;" class='img' bindtap="previewImage1" src='{{wenyi}}' data-src="{{wenyi}}" ></image>
+        </view>
+        </view>      
+        </ui-row>
+      </view>
+    </ui-popup>
+
+
+    <ui-popup show="{{ show1 }}" height="270" background="transparent">
+      <view class="popup1">
+        <ui-row height="40" border-bottom>
+          <ui-col vertical-align="middle" space-left="20">全民颜色大作战</ui-col>
+          <ui-col width="40" vertical-align="middle" align="center" bindtap="handleShow1">
+            <ui-icon type="x" size="18" color="#FC8950"></ui-icon>
+          </ui-col>
+        </ui-row>
+        <view class="title">寓教于乐的猜颜色游戏，考验你的眼力哟</view>
+        <ui-row height="200">  
+         <view class='view_img' >
+            <image style="width: 150px; height: 150px; background-color: #eeeeee;" class='img' bindtap="previewImage2" src='{{colorfight}}' data-src="{{colorfight}}" ></image>
+        </view>
+        </view>      
+        </ui-row>
+      </view>
+    </ui-popup>
+
+
+     <ui-popup show="{{ show2 }}" height="270" background="transparent">
+      <view class="popup2">
+        <ui-row height="40" border-bottom>
+          <ui-col vertical-align="middle" space-left="20">史上最囧挑战Lite</ui-col>
+          <ui-col width="40" vertical-align="middle" align="center" bindtap="handleShow2">
+            <ui-icon type="x" size="18" color="#FC8950"></ui-icon>
+          </ui-col>
+        </ui-row>
+        <view class="title">史上最囧的挑战，史上最囧的答题，史上最难的时间</view>
+        <ui-row height="200">  
+         <view class='view_img' >
+            <image style="width: 150px; height: 150px; background-color: #eeeeee;" class='img' bindtap="previewImage3" src='{{shishan}}' data-src="{{shishan}}" ></image>
+        </view>
+        </view>      
+        </ui-row>
+      </view>
+    </ui-popup>
+
+    <ui-popup show="{{ show3 }}" height="270" background="transparent">
+      <view class="popup3">
+        <ui-row height="40" border-bottom>
+          <ui-col vertical-align="middle" space-left="20">立问人脉</ui-col>
+          <ui-col width="40" vertical-align="middle" align="center" bindtap="handleShow3">
+            <ui-icon type="x" size="18" color="#FC8950"></ui-icon>
+          </ui-col>
+        </ui-row>
+        <view class="title">依据六度人脉原理，通过朋友传递快速找到解决问题的人，助力传播还可获得赏金酬谢</view>
+        <ui-row height="200">  
+         <view class='view_img' >
+            <image style="width: 150px; height: 150px; background-color: #eeeeee;" class='img' bindtap="previewImage4" src='{{renami}}' data-src="{{renami}}" ></image>
+        </view>
+        </view>      
+        </ui-row>
+      </view>
+    </ui-popup>
+
+    <ui-popup show="{{ show4 }}" height="270" background="transparent">
+      <view class="popup4">
+        <ui-row height="40" border-bottom>
+          <ui-col vertical-align="middle" space-left="20">小困惑</ui-col>
+          <ui-col width="40" vertical-align="middle" align="center" bindtap="handleShow4">
+            <ui-icon type="x" size="18" color="#FC8950"></ui-icon>
+          </ui-col>
+        </ui-row>
+        <view class="title">世界这么大，困惑那么多。</view>
+        <ui-row height="200">  
+         <view class='view_img' >
+            <image style="width: 150px; height: 150px; background-color: #eeeeee;" class='img' bindtap="previewImage5" src='{{kunhuo}}' data-src="{{kunhuo}}" ></image>
+        </view>
+        </view>      
+        </ui-row>
+      </view>
+    </ui-popup>
 </template>
 
 <script>
 export default {
     data :{
         current11: 0,
-        items4:['http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-        'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-        'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg']
-        
-      
+        items4:['../../img/swiper1.png',
+        '../../img/swiper2.png',
+        '../../img/swiper3.png'],
+        show5: false,
+        show6: false,
+        show1:false,
+        show2:false,
+        show3:false,
+        show4:false,
+        quwei:'../../img/quwei.png',
+        wenyifu:'../../img/wenyi.png',
+        relation:'../../img/relationship.png',
+        quest:'../../img/quest.png',
+        qiong:'../../img/qiong.png',
+        color:'../../img/color.png',
+        imgalist: ['https://media.ifanrusercontent.com/user_files/trochili/bb/84/bb842752479463c573e0b02864469ec23293fdd3-6681daa63a15d8a1c35a60bcdddc2ef16c17285e.jpg'],
+        wenyi:'https://media.ifanrusercontent.com/user_files/trochili/67/b8/67b846c1128063409dc9906cc2509a555d98b1a8-abca61bf3212ec0eaa196da1248759e725e8b333.jpg',
+        colorfight:'https://media.ifanrusercontent.com/user_files/trochili/e4/43/e4432b35b514111d5dc87e131e6abf611d71bf0d-45ec09d70c87667df54ce6cf41682e589a9b90fb.jpg',
+        shishan:'https://media.ifanrusercontent.com/user_files/trochili/83/ae/83ae719c8f87af97107d3f366c6a42f74187c8c4-35536ab36e1721dc4b48ee61b273fc3a68008b9d.jpg',
+        renami:'https://media.ifanrusercontent.com/user_files/trochili/d0/81/d081f66746a1418ca95cf72f36b6f0183b2a0e6a-f4bad74529d3a2590ef0cf8728251a77aa0c0e53.jpg',
+        kunhuo:'https://media.ifanrusercontent.com/user_files/trochili/38/7e/387e909d2649d9097a9f3618167a35548679afce-4cf3408d213bac3771ef180facfdb1e73a9ef9e4.jpg'
     },
+    handleShow1(){
+        this.setData({
+             show1:false
+        })
+    },
+    handleShow2(){
+        this.setData({
+             show2:false
+        })
+    },
+     handleShow3(){
+        this.setData({
+             show2:false
+        })
+    },
+    handleShow4(){
+        this.setData({
+             show4:false
+        })
+    },
+    handleShow5(){
+        this.setData({
+             show5:false
+        })
+    },
+  
+    handleShow6(){
+        this.setData({
+             show6:false
+        })
+    },
+    previewImage: function (e) {
+    wx.previewImage({
+      current: this.data.imgalist, // 当前显示图片的http链接   
+      urls: this.data.imgalist // 需要预览的图片http链接列表   
+    })  
+ },
+    previewImage1: function (e) {
+    wx.previewImage({
+      current: this.data.wenyi, // 当前显示图片的http链接   
+      urls: ['https://media.ifanrusercontent.com/user_files/trochili/67/b8/67b846c1128063409dc9906cc2509a555d98b1a8-abca61bf3212ec0eaa196da1248759e725e8b333.jpg','https://media.ifanrusercontent.com/user_files/trochili/67/b8/67b846c1128063409dc9906cc2509a555d98b1a8-abca61bf3212ec0eaa196da1248759e725e8b333.jpg'] // 需要预览的图片http链接列表   
+    })  
+ },
+   previewImage2: function (e) {
+    wx.previewImage({
+      current: this.data.wenyi, // 当前显示图片的http链接   
+      urls: ['https://media.ifanrusercontent.com/user_files/trochili/e4/43/e4432b35b514111d5dc87e131e6abf611d71bf0d-45ec09d70c87667df54ce6cf41682e589a9b90fb.jpg','https://media.ifanrusercontent.com/user_files/trochili/e4/43/e4432b35b514111d5dc87e131e6abf611d71bf0d-45ec09d70c87667df54ce6cf41682e589a9b90fb.jpg'] // 需要预览的图片http链接列表   
+    })  
+ },
+   previewImage3: function (e) {
+    wx.previewImage({
+      current: this.data.wenyi, // 当前显示图片的http链接   
+      urls: ['https://media.ifanrusercontent.com/user_files/trochili/83/ae/83ae719c8f87af97107d3f366c6a42f74187c8c4-35536ab36e1721dc4b48ee61b273fc3a68008b9d.jpg','https://media.ifanrusercontent.com/user_files/trochili/83/ae/83ae719c8f87af97107d3f366c6a42f74187c8c4-35536ab36e1721dc4b48ee61b273fc3a68008b9d.jpg'] // 需要预览的图片http链接列表   
+    })  
+ },
+    previewImage4: function (e) {
+    wx.previewImage({
+      current: this.data.wenyi, // 当前显示图片的http链接   
+      urls: ['https://media.ifanrusercontent.com/user_files/trochili/d0/81/d081f66746a1418ca95cf72f36b6f0183b2a0e6a-f4bad74529d3a2590ef0cf8728251a77aa0c0e53.jpg','https://media.ifanrusercontent.com/user_files/trochili/d0/81/d081f66746a1418ca95cf72f36b6f0183b2a0e6a-f4bad74529d3a2590ef0cf8728251a77aa0c0e53.jpg'] // 需要预览的图片http链接列表   
+    })  
+ },
+previewImage5: function (e) {
+    wx.previewImage({
+      current: this.data.wenyi, // 当前显示图片的http链接   
+      urls: ['https://media.ifanrusercontent.com/user_files/trochili/38/7e/387e909d2649d9097a9f3618167a35548679afce-4cf3408d213bac3771ef180facfdb1e73a9ef9e4.jpg','https://media.ifanrusercontent.com/user_files/trochili/38/7e/387e909d2649d9097a9f3618167a35548679afce-4cf3408d213bac3771ef180facfdb1e73a9ef9e4.jpg'] // 需要预览的图片http链接列表   
+    })  
+ },
+  openPopup1 (e) {
+    let show = e.currentTarget.dataset.show
+    this.setData({
+      show1: show
+    })
+  },
+  openPopup2 (e) {
+    let show = e.currentTarget.dataset.show
+    this.setData({
+      show2: show
+    })
+  },
+   openPopup3 (e) {
+    let show = e.currentTarget.dataset.show
+    this.setData({
+      show3: show
+    })
+  },
+ openPopup4 (e) {
+    let show = e.currentTarget.dataset.show
+    this.setData({
+      show4: show
+    })
+  },
+  openPopup5 (e) {
+    let show = e.currentTarget.dataset.show
+    this.setData({
+      show5: show
+    })
+  },
+   openPopup6 (e) {
+    let show = e.currentTarget.dataset.show
+    this.setData({
+      show6: show
+    })
+  },
     handleChange11 (e) {
         let index = e.detail.index
         this.setData({
@@ -137,7 +443,9 @@ export default {
         this.setData({
           current11:current
         })
-    }
+    },
+
+
 }
 </script>
 
@@ -147,7 +455,7 @@ export default {
   position: relative;
 }
 .swiper-container .swiper{
-  height: 100px;
+  height: 150px;
 }
 .swiper-container .swiper .img{
   width: 100%;
@@ -174,6 +482,9 @@ export default {
   background: #fff;
 }
 
+.content{
+    height:90%;
+}
 .top_tip{
     .left_icon{
         width: 50px;
@@ -201,4 +512,101 @@ export default {
         }
     }
 }
+
+.userin{
+    width:60px;
+    height:30px;
+    border:1px solid blue;
+    text-align: center;
+    line-height: 30px;
+    font-size:12px;
+    display:inline-block;
+    margin: 0px;
+ 
+}
+.popup5{
+  width: 95%;
+  background-color:#fff;
+  height:250px;
+  margin:0 auto;
+  border-radius:5px;
+  overflow:hidden;
+  .title{
+    line-height: 20px;
+    padding: 10px 20px;
+  }
+}
+.popup6{
+  width: 95%;
+  background-color:#fff;
+  height:250px;
+  margin:0 auto;
+  border-radius:5px;
+  overflow:hidden;
+  .title{
+    line-height: 20px;
+    padding: 10px 20px;
+  }
+}
+.popup1{
+  width: 95%;
+  background-color:#fff;
+  height:250px;
+  margin:0 auto;
+  border-radius:5px;
+  overflow:hidden;
+  .title{
+    line-height: 20px;
+    padding: 10px 20px;
+  }
+}
+.popup2{
+  width: 95%;
+  background-color:#fff;
+  height:250px;
+  margin:0 auto;
+  border-radius:5px;
+  overflow:hidden;
+  .title{
+    line-height: 20px;
+    padding: 10px 20px;
+  }
+}
+
+.popup3{
+  width: 95%;
+  background-color:#fff;
+  height:250px;
+  margin:0 auto;
+  border-radius:5px;
+  overflow:hidden;
+  .title{
+    line-height: 20px;
+    padding: 10px 10px;
+  }
+}
+.popup4{
+  width: 95%;
+  background-color:#fff;
+  height:250px;
+  margin:0 auto;
+  border-radius:5px;
+  overflow:hidden;
+  .title{
+    line-height: 20px;
+    padding: 10px 10px;
+  }
+}
+button {
+    
+    height: 36px;
+    line-height: 36px;
+}
+
+.left_icon{
+    width:50px;
+    height:50px;
+}
+
+
 </style>

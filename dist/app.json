@@ -1,18 +1,20 @@
 {
   "pages": [
-    "pages/home/index"
+    "pages/home/index",
+    "pages/detail/detail"
   ],
   "window": {
-    "backgroundTextStyle": "dark",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "程序小导航",
+    "navigationStyle": "default",
+    "backgroundTextStyle": "light",
     "backgroundColor": "#efefef",
-    "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTitleText": "小程序导航",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#ffffff"
   },
   "networkTimeout": {
     "request": 10000
   },
   "theme": {
-    "theme-color": "#39f"
+    "theme-color": "#3399ff"
   }
 }

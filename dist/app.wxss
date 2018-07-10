@@ -45,10 +45,10 @@ button {
   margin: 6px 0;
 }
 button[type="primary"] {
-  background-color: #39f;
+  background-color: #3399ff;
 }
 button[type="primary"][loading] {
-  background-color: #39f;
+  background-color: #3399ff;
 }
 button[type="primary"].button-hover {
   color: #fff;
@@ -56,25 +56,25 @@ button[type="primary"].button-hover {
   opacity: 0.8;
 }
 button[type="primary"][plain] {
-  border-color: #39f;
-  color: #39f;
+  border-color: #3399ff;
+  color: #3399ff;
 }
 button[type="primary"][plain].button-hover {
-  color: #39f;
-  border-color: #39f;
+  color: #3399ff;
+  border-color: #3399ff;
   opacity: 0.8;
 }
 button[type="primary"][size="mini"].button-hover {
-  border-color: #39f !important;
+  border-color: #3399ff !important;
 }
 button[type="primary"][disabled] {
   background-color: #85c2ff;
 }
 button[type="primary"][size="mini"] {
-  border-color: #39f !important;
+  border-color: #3399ff !important;
 }
 button[type="primary"][size="mini"].button-hover {
-  border-color: #39f !important;
+  border-color: #3399ff !important;
 }
 button[type="success"] {
   background-color: #13ce66;
@@ -941,4 +941,68 @@ button[type="success"][plain] {
 }
 .icon-tread:before {
   content: "\e9bd";
+}
+page {
+  font-size: 14px;
+}
+image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.touchui-hover {
+  background-color: #eee !important;
+}
+.sample_list .ui-row {
+  font-size: 14px;
+  height: 46px;
+  line-height: 46px;
+  color: #333;
+  padding: 0 15px;
+}
+.sample_list .group-title {
+  height: 50px;
+  line-height: 50px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #168AFD;
+}
+.sample_list .group-title .sign {
+  width: 5px;
+  height: 16px;
+  background-color: #168AFD;
+  border-radius: 5px;
+}
+.sample_list .group-title .ui-row {
+  padding: 0 10px;
+  color: #168AFD;
+}
+.sample_list .group-title .ui-row view {
+  font-weight: bold;
+}
+.sample_title {
+  background-color: #F7F9FB;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 40px;
+  padding-left: 20px;
+}
+.sample_content {
+  padding: 10px 20px;
+  line-height: 30px;
+}
+.content_list {
+  list-style: none;
+  background-color: #fff;
+}
+.content_list view {
+  padding: 0 15px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  color: #666;
+  border-bottom: 1px solid #eee;
+}
+.content_list .grey-bg {
+  background-color: #f5f5f5;
 }

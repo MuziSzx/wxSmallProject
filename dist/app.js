@@ -12,6 +12,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = App({
   globalData: {},
+
   onLaunch: function onLaunch() {
     _system2.default.attachInfo();
   },

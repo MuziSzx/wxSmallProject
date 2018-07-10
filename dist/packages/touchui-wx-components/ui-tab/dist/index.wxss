@@ -15,8 +15,8 @@ ui-tab {
   text-align: center;
 }
 .ui-tab.ui-tab-x.active {
-  color: #39f;
-  border-bottom: 1px solid #39f;
+  color: #3399ff;
+  border-bottom: 1px solid #3399ff;
 }
 .ui-tab.border-none {
   border: 0 !important;

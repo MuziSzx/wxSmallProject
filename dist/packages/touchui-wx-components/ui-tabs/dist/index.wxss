@@ -20,5 +20,5 @@ ui-tabs {
   position: relative;
   width: 100%;
   margin: 0 auto;
-  border-bottom: 2px solid #39f;
+  border-bottom: 2px solid #3399ff;
 }
