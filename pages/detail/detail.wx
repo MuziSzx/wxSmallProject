@@ -1,33 +1,23 @@
 <!--popup.ui-->
 <template>
   <view>
-
-    <view class="sample_content">
-    
-      <button data-show="{{ true }}" bindtap="openPopup5">自定义内容区域</button>
- 
+    <view  class="swiper-container">
+      <image src="{{chat}}" style="height:120px;"></image>
     </view>
-
-
-    <ui-popup show="{{ show5 }}" height="270" background="transparent">
-      <view class="popup5">
-        <ui-row height="40" border-bottom>
-          <ui-col vertical-align="middle" space-left="20">动漫APP</ui-col>
-          <ui-col width="40" vertical-align="middle" align="center" bindtap="handleShow5">
-            <ui-icon type="x" size="18" color="#FC8950"></ui-icon>
-          </ui-col>
-        </ui-row>
-        <view class="title">更新更快、流量超省、内容更全</view>
-        <ui-row height="50">
-          <ui-col space-left="20" space-right="10" vertical-align="middle">
-            <button>继续阅读</button>
-          </ui-col>
-          <ui-col space-left="10" space-right="20" vertical-align="middle">
-            <button type="primary" bindtap="handleShow5">安装享福利</button>
-          </ui-col>
-        </ui-row>
-      </view>
-    </ui-popup>
+    <view class="sample_content">
+      <text class="contract">联系我们</text>
+      <!-- <button data-show="{{ true }}" bindtap="openPopup5">自定义内容区域</button> -->
+    </view>
+    <view class="section">
+       <input placeholder="姓名" class="inputStl" auto-focus/>
+       <input placeholder="电话" class="inputStl" />
+       <input placeholder="邮箱" class="inputStl"/>
+       <input placeholder="主题" class="inputStl" />
+       <input placeholder="输入内容" class="inputStl" />
+    </view>
+    <view class="win">
+      <button class="button-style-demo1" loading="{{isLoading}}"  bindtap="submitHandler" disabled="{{isDisable}}">发送</button>
+    </view>
   </view>
 </template>
 
@@ -36,36 +26,34 @@
 
 // popup.js
 export default {
-
   data: {
-    
-     
-      show5: false,
-
-     
+      chat:'../../img/chat.png',
+      isLoading: false,
+      isDisable: false,
   },
   navigateBack () {
     wx.navigateBack()
   },
- 
-  handleShow5(){
+  submitHandler () {
     this.setData({
-      show5:false
+      isLoading:true,
+      buttonText:'提交中...',
+      isDisable:true
     })
-  },
- 
-  openPopup5 (e) {
-    let show = e.currentTarget.dataset.show
-    this.setData({
-      show5: show
-    })
-  },
- 
-
-  handleSwitchChange (e) {
-    this.setData({
-      show1: e.detail.value
-    })
+    // this.isLoading = true
+    // this.buttonText = '提交中...'
+    // this.isDisable = true
+    var that = this
+    setTimeout(function () {
+      // that.isLoading = false
+      // that.buttonText = '提交'
+      // that.isDisable = false
+      that.setData({
+        isLoading:false,
+        buttonText:'提交',
+        isDisable:false
+      })
+    }, 1000)
   }
 }
 
@@ -73,24 +61,33 @@ export default {
 
 <style lang="less">
   // popup.less
-button {
-  margin: 10px;
-  height: 36px;
-  line-height: 36px;
+.contract{
+  font-size: 16px;
+  font-weight: bold;
 }
-.popup5{
-  width: 95%;
-  background-color:#fff;
-  height:250px;
-  margin:0 auto;
-  border-radius:5px;
-  overflow:hidden;
-  .title{
-    line-height: 30px;
-    padding: 10px 20px;
-  }
+.section{
+  margin: 0 auto;
+  width:80%;
 }
-
-
-
+.inputStl{
+  height: 40px;
+  border:1px solid #f1f1f1;
+  border-radius: 20px;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+button{
+  margin: 6px 0;
+}
+.win{padding:10px;}
+.button-style-demo1 {
+  background-color: #C01920;
+  border-radius: 20px;
+  border-color: #C01920;
+  box-shadow: 3px 3px 8px #E57A7E;
+  color: #fff;
+}
+.button-style-demo1::after{
+  border: none;
+}
 </style>

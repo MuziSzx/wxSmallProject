@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = Page({
   data: {
     current11: 0,
+    current: 0,
     items4: ['../../img/swiper1.png', '../../img/swiper2.png', '../../img/swiper3.png'],
     show5: false,
     show6: false,
@@ -140,5 +141,22 @@ exports.default = Page({
     this.setData({
       current11: current
     });
+  },
+
+  swipclick: function swipclick(e) {
+    //点击图片触发事件
+    console.log(this.data.current);
+    if (this.data.current == "0") {
+      wx.navigateTo({
+        url: '../detail/detail'
+      });
+    }
+  },
+  bindchange: function bindchange(e) {
+    //轮播图发生改变
+    this.setData({
+      current: e.detail.current
+    });
   }
+
 });

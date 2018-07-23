@@ -1,9 +1,9 @@
 <template>
  <view class="swiper-container">
-    <swiper circular autoplay interval="5000" duration="500"  class="swiper">
+    <swiper circular autoplay interval="5000" duration="500"  class="swiper" bindchange="bindchange">
         <block wx:for="{{items4}}" wx:key="unique">
             <swiper-item>
-                <image src="{{item}}" class="img"></image>
+                <image src="{{item}}" class="img"  bindtap="swipclick"></image>
             </swiper-item>
         </block>
     </swiper>
@@ -19,11 +19,6 @@
     <ui-tab>工具</ui-tab>
     <ui-tab>电商</ui-tab>
     <ui-tab>游戏</ui-tab>
-    <ui-tab>娱乐</ui-tab>
-    <ui-tab>附近</ui-tab>
-    <ui-tab>游戏</ui-tab>
-    <ui-tab>游戏</ui-tab>
-    <ui-tab>游戏</ui-tab>
 </ui-tabs>
 </view>
 
@@ -33,7 +28,7 @@
     <ui-row height="80" border-bottom hover-class="touchui-hover">
         <ui-col width="80" align="center" vertical-align="middle">
             <view class="left_icon">
-                <image style="width:50px; height:50px;" class='img'  src='{{quwei}}' data-src="{{quwei}}" ></image>
+                <image style="width:50px; height:50px;" class='img'  src='{{quwei}}' data-src="{{quwei}}" >
             </view>
         </ui-col>
         <ui-col class="text" align="left" vertical-align="middle" space="20">
@@ -171,21 +166,7 @@
       
 
     </swiper-item>
-    <swiper-item>
-        内容四
-    </swiper-item>
-    <swiper-item>
-        内容五
-    </swiper-item>
-    <swiper-item>
-        内容六
-    </swiper-item>
-    <swiper-item>
-        内容七
-    </swiper-item>
-    <swiper-item>
-        内容八
-    </swiper-item>
+   
 </swiper>
     <ui-popup show="{{ show5 }}" height="270" background="transparent">
       <view class="popup5">
@@ -201,7 +182,7 @@
          <view class='view_img' >
             <image class='img' bindtap="previewImage" src='{{scene}}'></image>
             </view>
-            <view wx:for="{{imgalist}}"wx:for-item="image"class="previewimg">  
+            <view wx:for="{{imgalist}}" wx:for-item="image" class="previewimg">  
             <image src="{{image}}" style="width: 150px; height: 150px; background-color: #eeeeee;"  data-src="{{image}}" bindtap="previewImage" class='img'></image>  
         </view>
               
@@ -223,7 +204,7 @@
          <view class='view_img' >
             <image style="width: 150px; height: 150px; background-color: #eeeeee;" class='img' bindtap="previewImage1" src='{{wenyi}}' data-src="{{wenyi}}" ></image>
         </view>
-        </view>      
+             
         </ui-row>
       </view>
     </ui-popup>
@@ -242,7 +223,7 @@
          <view class='view_img' >
             <image style="width: 150px; height: 150px; background-color: #eeeeee;" class='img' bindtap="previewImage2" src='{{colorfight}}' data-src="{{colorfight}}" ></image>
         </view>
-        </view>      
+            
         </ui-row>
       </view>
     </ui-popup>
@@ -261,7 +242,7 @@
          <view class='view_img' >
             <image style="width: 150px; height: 150px; background-color: #eeeeee;" class='img' bindtap="previewImage3" src='{{shishan}}' data-src="{{shishan}}" ></image>
         </view>
-        </view>      
+             
         </ui-row>
       </view>
     </ui-popup>
@@ -279,7 +260,7 @@
          <view class='view_img' >
             <image style="width: 150px; height: 150px; background-color: #eeeeee;" class='img' bindtap="previewImage4" src='{{renami}}' data-src="{{renami}}" ></image>
         </view>
-        </view>      
+            
         </ui-row>
       </view>
     </ui-popup>
@@ -296,22 +277,23 @@
         <ui-row height="200">  
          <view class='view_img' >
             <image style="width: 150px; height: 150px; background-color: #eeeeee;" class='img' bindtap="previewImage5" src='{{kunhuo}}' data-src="{{kunhuo}}" ></image>
-        </view>
-        </view>      
+        </view>       
         </ui-row>
       </view>
     </ui-popup>
+
 </template>
 
 <script>
 export default {
     data :{
         current11: 0,
+        current:0 ,
         items4:['../../img/swiper1.png',
         '../../img/swiper2.png',
         '../../img/swiper3.png'],
-        show5: false,
-        show6: false,
+        show5:false,
+        show6:false,
         show1:false,
         show2:false,
         show3:false,
@@ -444,6 +426,21 @@ previewImage5: function (e) {
           current11:current
         })
     },
+     swipclick: function (e) {//点击图片触发事件
+        console.log(this.data.current);
+        if(this.data.current == "0"){
+            wx.navigateTo({
+                url:'../detail/detail'
+            })
+        }
+        
+    },
+    bindchange:function(e){//轮播图发生改变
+        this.setData({
+            current:e.detail.current
+        });
+        
+    }
 
 
 }

@@ -1,8 +1,8 @@
 <view class="swiper-container">
-  <swiper circular autoplay interval="5000" duration="500" class="swiper">
+  <swiper circular autoplay interval="5000" duration="500" class="swiper" bindchange="bindchange">
     <block wx:for="{{items4}}" wx:key="unique">
       <swiper-item>
-        <image src="{{item}}" class="img" />
+        <image src="{{item}}" class="img" bindtap="swipclick" />
       </swiper-item>
     </block>
   </swiper>
@@ -17,11 +17,6 @@
   <ui-tabs index="{{ current11 }}" bounce="{{false}}" bindchange="handleChange11" _pid="{{_pid}}">
     <ui-tab _pid="{{_pid}}">工具</ui-tab>
     <ui-tab _pid="{{_pid}}">电商</ui-tab>
-    <ui-tab _pid="{{_pid}}">游戏</ui-tab>
-    <ui-tab _pid="{{_pid}}">娱乐</ui-tab>
-    <ui-tab _pid="{{_pid}}">附近</ui-tab>
-    <ui-tab _pid="{{_pid}}">游戏</ui-tab>
-    <ui-tab _pid="{{_pid}}">游戏</ui-tab>
     <ui-tab _pid="{{_pid}}">游戏</ui-tab>
   </ui-tabs>
 </view>
@@ -218,21 +213,7 @@
 
 
   </swiper-item>
-  <swiper-item>
-    内容四
-  </swiper-item>
-  <swiper-item>
-    内容五
-  </swiper-item>
-  <swiper-item>
-    内容六
-  </swiper-item>
-  <swiper-item>
-    内容七
-  </swiper-item>
-  <swiper-item>
-    内容八
-  </swiper-item>
+
 </swiper>
 <ui-popup show="{{ show5 }}" height="270" background="transparent" _pid="{{_pid}}">
   <view class="popup5">
@@ -278,10 +259,9 @@
       <view class="view_img">
         <image style="width: 150px; height: 150px; background-color: #eeeeee;" class="img" bindtap="previewImage1" src="{{wenyi}}" data-src="{{wenyi}}" />
       </view>
+
     </view>
   </view>
-
-
 </ui-popup>
 
 
@@ -302,10 +282,9 @@
       <view class="view_img">
         <image style="width: 150px; height: 150px; background-color: #eeeeee;" class="img" bindtap="previewImage2" src="{{colorfight}}" data-src="{{colorfight}}" />
       </view>
+
     </view>
   </view>
-
-
 </ui-popup>
 
 
@@ -326,10 +305,9 @@
       <view class="view_img">
         <image style="width: 150px; height: 150px; background-color: #eeeeee;" class="img" bindtap="previewImage3" src="{{shishan}}" data-src="{{shishan}}" />
       </view>
+
     </view>
   </view>
-
-
 </ui-popup>
 
 <ui-popup show="{{ show3 }}" height="270" background="transparent" _pid="{{_pid}}">
@@ -349,10 +327,9 @@
       <view class="view_img">
         <image style="width: 150px; height: 150px; background-color: #eeeeee;" class="img" bindtap="previewImage4" src="{{renami}}" data-src="{{renami}}" />
       </view>
+
     </view>
   </view>
-
-
 </ui-popup>
 
 <ui-popup show="{{ show4 }}" height="270" background="transparent" _pid="{{_pid}}">
@@ -374,6 +351,4 @@
       </view>
     </view>
   </view>
-
-
 </ui-popup>
