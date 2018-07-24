@@ -56,22 +56,22 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #FCB300;
+  background-color: #fcb300;
   text-align: center;
   line-height: 50px;
 }
 .top_tip .left_icon2 {
-  background-color: #FF7360;
+  background-color: #ff7360;
 }
 .top_tip .left_icon3 {
-  background-color: #39CCC5;
+  background-color: #39ccc5;
 }
 .top_tip .text text {
   font-size: 16px;
   color: #313338;
 }
 .top_tip .text view {
-  color: #9C9FA4;
+  color: #9c9fa4;
   font-size: 12px;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -147,7 +147,7 @@
   line-height: 20px;
   padding: 10px 10px;
 }
-.popup4 {
+.popup {
   width: 95%;
   background-color: #fff;
   height: 250px;
@@ -155,7 +155,7 @@
   border-radius: 5px;
   overflow: hidden;
 }
-.popup4 .title {
+.popup .title {
   line-height: 20px;
   padding: 10px 10px;
 }

@@ -15,196 +15,46 @@
 </view>
 <view>
   <ui-tabs index="{{ current11 }}" bounce="{{false}}" bindchange="handleChange11" _pid="{{_pid}}">
-    <ui-tab _pid="{{_pid}}">工具</ui-tab>
-    <ui-tab _pid="{{_pid}}">电商</ui-tab>
-    <ui-tab _pid="{{_pid}}">游戏</ui-tab>
+    <block wx:for="{{listNames}}">
+      <ui-tab id="{{item.column_id}}" _pid="{{_pid}}">{{item.column_name}}</ui-tab>
+    </block>
   </ui-tabs>
 </view>
 
 <swiper class="content" current="{{ current11 }}" bindchange="handleContentChange11">
   <swiper-item>
     <view class="top_tip">
-      <view hover-class="touchui-hover" class="ui-row ui-row-border-bottom" style="height:80px;">
-        <view class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 80px;">
-          <view class="ui-col-content align-center valign-middle">
-            <view class="left_icon">
-              <image style="width:50px; height:50px;" class="img" src="{{quwei}}" data-src="{{quwei}}" />
-            </view>
-          </view>
-        </view>
-        <view class="text ui-col ui-col-align-left align-left valign-middle" style="padding-left: 10px; padding-right: 10px;">
-          <view class="ui-col-content align-left valign-middle">
-            <view style="width: 100%;">
-              <view class="ui-row" style="height:30px;">
-                <view class="ui-col ui-col-align-left align-left valign-middle" style="">
-                  <view class="ui-col-content align-left valign-middle">
-                    <text>趣味视力表</text>
-                  </view>
-                </view>
-                <view class="ui-col ui-col-align-right align-right valign-middle" style="padding-right: 10px;flex:0 0 100px;">
-                  <view class="ui-col-content align-right valign-middle">
-                    <button class="userin" data-show="{{ true }}" bindtap="openPopup5">体验</button>
-                  </view>
-                </view>
-              </view>
-              <view style="width:70%">有趣好玩的视力表，明星视力表、吃货视力表！</view>
-            </view>
-          </view>
-        </view>
-      </view>
-    </view>
-    <view class="top_tip">
-      <view hover-class="touchui-hover" class="ui-row ui-row-border-bottom" style="height:80px;">
-        <view class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 80px;">
-          <view class="ui-col-content align-center valign-middle">
-            <view class="left_icon">
-              <image style="width:50px; height:50px;" class="img" src="{{wenyifu}}" data-src="{{wenyifu}}" />
-            </view>
-          </view>
-        </view>
-        <view class="text ui-col ui-col-align-left align-left valign-middle" style="padding-left: 10px; padding-right: 10px;">
-          <view class="ui-col-content align-left valign-middle">
-            <view style="width: 100%;">
-              <view class="ui-row" style="height:30px;">
-                <view class="ui-col ui-col-align-left align-left valign-middle" style="">
-                  <view class="ui-col-content align-left valign-middle">
-                    <text>文艺乎</text>
-                  </view>
-                </view>
-                <view class="ui-col ui-col-align-right align-right valign-middle" style="padding-right: 10px;flex:0 0 100px;">
-                  <view class="ui-col-content align-right valign-middle">
-                    <button class="userin" data-show="{{ true }}" bindtap="openPopup6">体验</button>
-                  </view>
-                </view>
-              </view>
-              <view style="width:70%">原来你和我一样，偶尔也会想要安静下来写点什么，或是翻着别人的五味杂陈轻笑人生，在繁杂又枯燥的日子里做着文艺的梦</view>
-            </view>
-          </view>
-        </view>
-      </view>
-    </view>
-    <view class="top_tip">
-      <view hover-class="touchui-hover" class="ui-row ui-row-border-bottom" style="height:80px;">
-        <view class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 80px;">
-          <view class="ui-col-content align-center valign-middle">
-            <view class="left_icon ">
-              <image style="width:50px; height:50px;" class="img" src="{{color}}" data-src="{{color}}" />
-            </view>
-          </view>
-        </view>
-        <view class="text ui-col ui-col-align-left align-left valign-middle" style="padding-left: 10px; padding-right: 10px;">
-          <view class="ui-col-content align-left valign-middle">
-            <view style="width: 100%;">
-              <view class="ui-row" style="height:30px;">
-                <view class="ui-col ui-col-align-left align-left valign-middle" style="">
-                  <view class="ui-col-content align-left valign-middle">
-                    <text>全民颜色大作战</text>
-                  </view>
-                </view>
-                <view class="ui-col ui-col-align-right align-right valign-middle" style="padding-right: 10px;flex:0 0 100px;">
-                  <view class="ui-col-content align-right valign-middle">
-                    <button class="userin" data-show="{{ true }}" bindtap="openPopup1">体验</button>
-                  </view>
-                </view>
-              </view>
-              <view style="width:70%">寓教于乐的猜颜色游戏，考验你的眼力哟</view>
-            </view>
-          </view>
-        </view>
-      </view>
-    </view>
+      <block wx:for="{{column11}}">
+        <view hover-class="touchui-hover" class="ui-row ui-row-border-bottom" style="height:80px;">
+          <view class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 80px;">
+            <view class="ui-col-content align-center valign-middle">
 
-    <view class="top_tip">
-      <view hover-class="touchui-hover" class="ui-row ui-row-border-bottom" style="height:80px;">
-        <view class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 80px;">
-          <view class="ui-col-content align-center valign-middle">
-            <view class="left_icon">
-              <image style="width:50px; height:50px;" class="img" src="{{qiong}}" data-src="{{qiong}}" />
-            </view>
-          </view>
-        </view>
-        <view class="text ui-col ui-col-align-left align-left valign-middle" style="padding-left: 10px; padding-right: 10px;">
-          <view class="ui-col-content align-left valign-middle">
-            <view style="width: 100%;">
-              <view class="ui-row" style="height:30px;">
-                <view class="ui-col ui-col-align-left align-left valign-middle" style="">
-                  <view class="ui-col-content align-left valign-middle">
-                    <text>史上最囧挑战Lite</text>
-                  </view>
-                </view>
-                <view class="ui-col ui-col-align-right align-right valign-middle" style="padding-right: 10px;flex:0 0 100px;">
-                  <view class="ui-col-content align-right valign-middle">
-                    <button class="userin" data-show="{{ true }}" bindtap="openPopup2">体验</button>
-                  </view>
-                </view>
+              <view class="left_icon">
+                <image style="width:50px; height:50px;" class="img" src="{{item.icon_src}}" data-src="{{item.icon_src}}" />
               </view>
-              <view style="width:70%">史上最囧的挑战，史上最囧的答题，史上最难的时间</view>
             </view>
           </view>
-        </view>
-      </view>
-    </view>
-
-    <view class="top_tip">
-      <view hover-class="touchui-hover" class="ui-row ui-row-border-bottom" style="height:80px;">
-        <view class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 80px;">
-          <view class="ui-col-content align-center valign-middle">
-            <view class="left_icon ">
-              <image style="width:50px; height:50px;" class="img" src="{{relation}}" data-src="{{relation}}" />
-            </view>
-          </view>
-        </view>
-        <view class="text ui-col ui-col-align-left align-left valign-middle" style="padding-left: 10px; padding-right: 10px;">
-          <view class="ui-col-content align-left valign-middle">
-            <view style="width: 100%;">
-              <view class="ui-row" style="height:30px;">
-                <view class="ui-col ui-col-align-left align-left valign-middle" style="">
-                  <view class="ui-col-content align-left valign-middle">
-                    <text>立问人脉</text>
+          <view class="text ui-col ui-col-align-left align-left valign-middle" style="padding-left: 10px; padding-right: 10px;">
+            <view class="ui-col-content align-left valign-middle">
+              <view style="width: 100%;">
+                <view class="ui-row" style="height:30px;">
+                  <view class="ui-col ui-col-align-left align-left valign-middle" style="">
+                    <view class="ui-col-content align-left valign-middle">
+                      <text>{{item.title}}</text>
+                    </view>
+                  </view>
+                  <view class="ui-col ui-col-align-right align-right valign-middle" style="padding-right: 10px;flex:0 0 100px;">
+                    <view class="ui-col-content align-right valign-middle">
+                      <button class="userin" data-show="{{ true }}" bindtap="openPopup">体验</button>
+                    </view>
                   </view>
                 </view>
-                <view class="ui-col ui-col-align-right align-right valign-middle" style="padding-right: 10px;flex:0 0 100px;">
-                  <view class="ui-col-content align-right valign-middle">
-                    <button class="userin" data-show="{{ true }}" bindtap="openPopup3">体验</button>
-                  </view>
-                </view>
+                <view style="width:70%">{{item.desc}}</view>
               </view>
-              <view style="width:70%">依据六度人脉原理，通过朋友传递快速找到解决问题的人，助力传播还可获得赏金酬谢。</view>
             </view>
           </view>
         </view>
-      </view>
-    </view>
-
-    <view class="top_tip">
-      <view hover-class="touchui-hover" class="ui-row ui-row-border-bottom" style="height:80px;">
-        <view class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 80px;">
-          <view class="ui-col-content align-center valign-middle">
-            <view class="left_icon ">
-              <image style="width:50px; height:50px;" class="img" src="{{quest}}" data-src="{{quest}}" />
-            </view>
-          </view>
-        </view>
-        <view class="text ui-col ui-col-align-left align-left valign-middle" style="padding-left: 10px; padding-right: 10px;">
-          <view class="ui-col-content align-left valign-middle">
-            <view style="width: 100%;">
-              <view class="ui-row" style="height:30px;">
-                <view class="ui-col ui-col-align-left align-left valign-middle" style="">
-                  <view class="ui-col-content align-left valign-middle">
-                    <text>小困惑</text>
-                  </view>
-                </view>
-                <view class="ui-col ui-col-align-right align-right valign-middle" style="padding-right: 10px;flex:0 0 100px;">
-                  <view class="ui-col-content align-right valign-middle">
-                    <button class="userin" data-show="{{ true }}" bindtap="openPopup4">体验</button>
-                  </view>
-                </view>
-              </view>
-              <view style="width:70%">世界这么大，困惑那么多。</view>
-            </view>
-          </view>
-        </view>
-      </view>
+      </block>
     </view>
   </swiper-item>
   <swiper-item>
@@ -215,140 +65,28 @@
   </swiper-item>
 
 </swiper>
-<ui-popup show="{{ show5 }}" height="270" background="transparent" _pid="{{_pid}}">
-  <view class="popup5">
-    <view class="ui-row ui-row-border-bottom" style="height:40px;">
-      <view class="ui-col valign-middle" style="padding-left: 20px;">
-        <view class="ui-col-content valign-middle">趣味视力表</view>
+
+<view wx:for="{{column11}}">
+  <ui-popup show="{{ show }}" height="270" background="transparent" _pid="{{_pid}}">
+
+    <view class="popup">
+      <view class="ui-row ui-row-border-bottom" style="height:40px;">
+        <view class="ui-col valign-middle" style="padding-left: 20px;">
+          <view class="ui-col-content valign-middle">{{item.title}}</view>
+        </view>
+        <view bindtap="handleShow2" class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 40px;">
+          <view class="ui-col-content align-center valign-middle">
+            <span type="x" size="18" color="#FC8950" class="ui-icon icon-x" style="color: #FC8950;font-size: 18px;"></span>
+          </view>
+        </view>
       </view>
-      <view bindtap="handleShow5" class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 40px;">
-        <view class="ui-col-content align-center valign-middle">
-          <span type="x" size="18" color="#FC8950" class="ui-icon icon-x" style="color: #FC8950;font-size: 18px;"></span>
+      <view class="title">{{item.desc}}</view>
+      <view class="ui-row" style="height:200px;">
+        <view class="view_img">
+          <image style="width: 150px; height: 150px; background-color: #eeeeee;" class="img" bindtap="previewImage" src="{{item.QRcode_src}}" data-src="{{item.QRcode_src}}" />
         </view>
       </view>
     </view>
-    <view class="title">有趣好玩的视力表，明星视力表、吃货视力表！</view>
-    <view class="ui-row" style="height:200px;">
+  </ui-popup>
 
-      <view class="view_img">
-        <image class="img" bindtap="previewImage" src="{{scene}}" />
-      </view>
-      <view wx:for="{{imgalist}}" wx:for-item="image" class="previewimg">
-        <image src="{{image}}" style="width: 150px; height: 150px; background-color: #eeeeee;" data-src="{{image}}" bindtap="previewImage" class="img" />
-      </view>
-
-    </view>
-  </view>
-</ui-popup>
-
-
-<ui-popup show="{{ show6 }}" height="270" background="transparent" _pid="{{_pid}}">
-  <view class="popup6">
-    <view class="ui-row ui-row-border-bottom" style="height:40px;">
-      <view class="ui-col valign-middle" style="padding-left: 20px;">
-        <view class="ui-col-content valign-middle">文艺乎</view>
-      </view>
-      <view bindtap="handleShow6" class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 40px;">
-        <view class="ui-col-content align-center valign-middle">
-          <span type="x" size="18" color="#FC8950" class="ui-icon icon-x" style="color: #FC8950;font-size: 18px;"></span>
-        </view>
-      </view>
-    </view>
-    <view class="title">原来你和我一样，偶尔也会想要安静下来写点什么</view>
-    <view class="ui-row" style="height:200px;">
-      <view class="view_img">
-        <image style="width: 150px; height: 150px; background-color: #eeeeee;" class="img" bindtap="previewImage1" src="{{wenyi}}" data-src="{{wenyi}}" />
-      </view>
-
-    </view>
-  </view>
-</ui-popup>
-
-
-<ui-popup show="{{ show1 }}" height="270" background="transparent" _pid="{{_pid}}">
-  <view class="popup1">
-    <view class="ui-row ui-row-border-bottom" style="height:40px;">
-      <view class="ui-col valign-middle" style="padding-left: 20px;">
-        <view class="ui-col-content valign-middle">全民颜色大作战</view>
-      </view>
-      <view bindtap="handleShow1" class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 40px;">
-        <view class="ui-col-content align-center valign-middle">
-          <span type="x" size="18" color="#FC8950" class="ui-icon icon-x" style="color: #FC8950;font-size: 18px;"></span>
-        </view>
-      </view>
-    </view>
-    <view class="title">寓教于乐的猜颜色游戏，考验你的眼力哟</view>
-    <view class="ui-row" style="height:200px;">
-      <view class="view_img">
-        <image style="width: 150px; height: 150px; background-color: #eeeeee;" class="img" bindtap="previewImage2" src="{{colorfight}}" data-src="{{colorfight}}" />
-      </view>
-
-    </view>
-  </view>
-</ui-popup>
-
-
-<ui-popup show="{{ show2 }}" height="270" background="transparent" _pid="{{_pid}}">
-  <view class="popup2">
-    <view class="ui-row ui-row-border-bottom" style="height:40px;">
-      <view class="ui-col valign-middle" style="padding-left: 20px;">
-        <view class="ui-col-content valign-middle">史上最囧挑战Lite</view>
-      </view>
-      <view bindtap="handleShow2" class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 40px;">
-        <view class="ui-col-content align-center valign-middle">
-          <span type="x" size="18" color="#FC8950" class="ui-icon icon-x" style="color: #FC8950;font-size: 18px;"></span>
-        </view>
-      </view>
-    </view>
-    <view class="title">史上最囧的挑战，史上最囧的答题，史上最难的时间</view>
-    <view class="ui-row" style="height:200px;">
-      <view class="view_img">
-        <image style="width: 150px; height: 150px; background-color: #eeeeee;" class="img" bindtap="previewImage3" src="{{shishan}}" data-src="{{shishan}}" />
-      </view>
-
-    </view>
-  </view>
-</ui-popup>
-
-<ui-popup show="{{ show3 }}" height="270" background="transparent" _pid="{{_pid}}">
-  <view class="popup3">
-    <view class="ui-row ui-row-border-bottom" style="height:40px;">
-      <view class="ui-col valign-middle" style="padding-left: 20px;">
-        <view class="ui-col-content valign-middle">立问人脉</view>
-      </view>
-      <view bindtap="handleShow3" class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 40px;">
-        <view class="ui-col-content align-center valign-middle">
-          <span type="x" size="18" color="#FC8950" class="ui-icon icon-x" style="color: #FC8950;font-size: 18px;"></span>
-        </view>
-      </view>
-    </view>
-    <view class="title">依据六度人脉原理，通过朋友传递快速找到解决问题的人，助力传播还可获得赏金酬谢</view>
-    <view class="ui-row" style="height:200px;">
-      <view class="view_img">
-        <image style="width: 150px; height: 150px; background-color: #eeeeee;" class="img" bindtap="previewImage4" src="{{renami}}" data-src="{{renami}}" />
-      </view>
-
-    </view>
-  </view>
-</ui-popup>
-
-<ui-popup show="{{ show4 }}" height="270" background="transparent" _pid="{{_pid}}">
-  <view class="popup4">
-    <view class="ui-row ui-row-border-bottom" style="height:40px;">
-      <view class="ui-col valign-middle" style="padding-left: 20px;">
-        <view class="ui-col-content valign-middle">小困惑</view>
-      </view>
-      <view bindtap="handleShow4" class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 40px;">
-        <view class="ui-col-content align-center valign-middle">
-          <span type="x" size="18" color="#FC8950" class="ui-icon icon-x" style="color: #FC8950;font-size: 18px;"></span>
-        </view>
-      </view>
-    </view>
-    <view class="title">世界这么大，困惑那么多。</view>
-    <view class="ui-row" style="height:200px;">
-      <view class="view_img">
-        <image style="width: 150px; height: 150px; background-color: #eeeeee;" class="img" bindtap="previewImage5" src="{{kunhuo}}" data-src="{{kunhuo}}" />
-      </view>
-    </view>
-  </view>
-</ui-popup>
+</view>

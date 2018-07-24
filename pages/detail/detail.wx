@@ -9,11 +9,11 @@
       <!-- <button data-show="{{ true }}" bindtap="openPopup5">自定义内容区域</button> -->
     </view>
     <view class="section">
-       <input placeholder="姓名" class="inputStl" auto-focus/>
-       <input placeholder="电话" class="inputStl" />
-       <input placeholder="邮箱" class="inputStl"/>
-       <input placeholder="主题" class="inputStl" />
-       <input placeholder="输入内容" class="inputStl" />
+       <input placeholder="姓名" class="inputStl" auto-focus confirm-type="next" bindinput="nameIn"/>
+       <input placeholder="电话" type="number" class="inputStl" confirm-type="next" bindinput="phoneIn"/>
+       <input placeholder="邮箱" class="inputStl" confirm-type="next" bindinput="emailIn"/>
+       <input placeholder="主题" class="inputStl"  confirm-type="next" bindinput="subjectIn"/>
+       <input placeholder="输入内容" class="inputStl" confirm-type="done" bindinput="contentIn" />
     </view>
     <view class="win">
       <button class="button-style-demo1" loading="{{isLoading}}"  bindtap="submitHandler" disabled="{{isDisable}}">发送</button>
@@ -29,17 +29,98 @@ export default {
   data: {
       chat:'../../img/chat.png',
       isLoading: false,
+      buttonText: '提交',
       isDisable: false,
+      username:'',
+      phone:'',
+      email:'',
+      subject:'',
+      content:''
+
   },
+  nameIn:function(e){
+    this.setData({
+      username : e.detail.value
+    })
+    
+  },
+   phoneIn:function(e){
+    this.setData({
+      phone : e.detail.value
+    })
+  
+  },
+   emailIn:function(e){
+      this.setData({
+      email : e.detail.value
+    })
+  },
+   subjectIn:function(e){
+     this.setData({
+      subject : e.detail.value
+    })
+  },
+   contentIn:function(e){
+      this.setData({
+      content : e.detail.value
+    })
+  },
+
   navigateBack () {
     wx.navigateBack()
   },
   submitHandler () {
-    this.setData({
-      isLoading:true,
-      buttonText:'提交中...',
-      isDisable:true
+    if(this.data.username == ""){
+      wx.showToast({
+       title: '请输入姓名',
+      icon: 'none',
+      duration: 2000
     })
+    }else if(this.data.phone == ""){
+      wx.showToast({
+       title: '请输入电话号码',
+      icon: 'none',
+      duration: 2000
+      })
+    }else if(this.data.email == ""){
+       wx.showToast({
+       title: '请输入邮箱',
+        icon: 'none',
+       duration: 2000
+      })
+    }else{
+      this.setData({  
+        isLoading:true,
+        buttonText:'提交中...',
+        isDisable:true
+       });
+       wx.request({
+         url:'test.php',
+         data:{
+          "type":"3",
+	        "username":this.data.username,
+	        "phone":this.data.phone,
+	        "email":this.data.email,
+	        "subject":this.data.subject,
+	        "content":this.data.content,
+         },
+         header: {
+          'content-type': 'application/json' // 默认值
+         },
+          success: res=> {
+             console.log(res.data)
+          },
+          fail:res=>{
+             wx.showToast({
+                title: '发送失败，请重新发送',
+                icon: 'none',
+                duration: 2000
+               })
+          }
+       })
+    }
+    
+    
     // this.isLoading = true
     // this.buttonText = '提交中...'
     // this.isDisable = true
