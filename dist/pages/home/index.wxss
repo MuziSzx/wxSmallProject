@@ -87,70 +87,10 @@
   display: inline-block;
   margin: 0px;
 }
-.popup5 {
-  width: 95%;
-  background-color: #fff;
-  height: 250px;
-  margin: 0 auto;
-  border-radius: 5px;
-  overflow: hidden;
-}
-.popup5 .title {
-  line-height: 20px;
-  padding: 10px 20px;
-}
-.popup6 {
-  width: 95%;
-  background-color: #fff;
-  height: 250px;
-  margin: 0 auto;
-  border-radius: 5px;
-  overflow: hidden;
-}
-.popup6 .title {
-  line-height: 20px;
-  padding: 10px 20px;
-}
-.popup1 {
-  width: 95%;
-  background-color: #fff;
-  height: 250px;
-  margin: 0 auto;
-  border-radius: 5px;
-  overflow: hidden;
-}
-.popup1 .title {
-  line-height: 20px;
-  padding: 10px 20px;
-}
-.popup2 {
-  width: 95%;
-  background-color: #fff;
-  height: 250px;
-  margin: 0 auto;
-  border-radius: 5px;
-  overflow: hidden;
-}
-.popup2 .title {
-  line-height: 20px;
-  padding: 10px 20px;
-}
-.popup3 {
-  width: 95%;
-  background-color: #fff;
-  height: 250px;
-  margin: 0 auto;
-  border-radius: 5px;
-  overflow: hidden;
-}
-.popup3 .title {
-  line-height: 20px;
-  padding: 10px 10px;
-}
 .popup {
   width: 95%;
   background-color: #fff;
-  height: 250px;
+  height: 300px;
   margin: 0 auto;
   border-radius: 5px;
   overflow: hidden;
@@ -158,6 +98,7 @@
 .popup .title {
   line-height: 20px;
   padding: 10px 10px;
+  font-size: 12px;
 }
 button {
   height: 36px;
