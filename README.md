@@ -1,5 +1,4 @@
 # wxSmallProject
-# wangxiang wxsmall project 
 # It's first time for me to write wx
 
 #这是一个导航式的微信小程序。现在仅仅展示了三个小程序。
