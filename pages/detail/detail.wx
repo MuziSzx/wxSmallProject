@@ -95,7 +95,7 @@ export default {
         isDisable:true
        });
        wx.request({
-         url:'test.php',
+         url:'https://mipro.quapp.cn/mini/userinfo/add',
          data:{
           "type":"3",
 	        "username":this.data.username,

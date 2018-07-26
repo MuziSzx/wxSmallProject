@@ -1,6 +1,7 @@
 <view class="swiper-container">
+  <!-- 轮播图 -->
   <swiper circular autoplay interval="5000" duration="500" class="swiper" bindchange="bindchange">
-    <block wx:for="{{items4}}">
+    <block wx:for="{{items4}}" wx:key="unique">
       <swiper-item>
         <image src="{{item}}" class="img" bindtap="swipclick" />
       </swiper-item>
@@ -14,75 +15,72 @@
   </view>
 </view>
 <view>
+  <!-- 导航栏 -->
   <ui-tabs index="{{ current11 }}" bounce="{{false}}" bindchange="handleChange11" _pid="{{_pid}}">
-    <block wx:for="{{listNames}}">
+    <block wx:for="{{listNames}}" wx:key="unique">
       <ui-tab id="{{item.column_id}}" _pid="{{_pid}}">{{item.column_name}}</ui-tab>
     </block>
   </ui-tabs>
 </view>
 
 <swiper class="content" current="{{ current11 }}" bindchange="handleContentChange11">
-  <swiper-item>
-    <view class="top_tip">
-      <block wx:for="{{column11}}">
-        <view hover-class="touchui-hover" class="ui-row ui-row-border-bottom" style="height:80px;">
-          <view class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 80px;">
-            <view class="ui-col-content align-center valign-middle">
-              <view class="left_icon">
-                <image style="width:50px; height:50px;" class="img" src="{{item.icon_src}}" data-src="{{item.icon_src}}" />
-              </view>
+  <swiper-item wx:for="{{column}}" wx:key="unique">
+    <!-- 内容 -->
+    <view class="top_tip" wx:for="{{item.content}}" wx:key="unique" wx:for-item="columeId">
+      <view hover-class="touchui-hover" class="ui-row ui-row-border-bottom" style="height:80px;">
+        <view class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 80px;">
+          <view class="ui-col-content align-center valign-middle">
+            <view class="left_icon">
+              <image style="width:50px; height:50px;" class="img" src="{{columeId.icon_src}}" data-src="{{columeId.icon_src}}" />
             </view>
           </view>
-          <view class="text ui-col ui-col-align-left align-left valign-middle" style="padding-left: 10px; padding-right: 10px;">
-            <view class="ui-col-content align-left valign-middle">
-              <view style="width: 100%;">
-                <view class="ui-row" style="height:30px;">
-                  <view class="ui-col ui-col-align-left align-left valign-middle" style="">
-                    <view class="ui-col-content align-left valign-middle">
-                      <text>{{item.title}}</text>
-                    </view>
-                  </view>
-                  <view class="ui-col ui-col-align-right align-right valign-middle" style="padding-right: 10px;flex:0 0 100px;">
-                    <view class="ui-col-content align-right valign-middle">
-                      <button class="userin" data-show="{{ true }}" data-title="{{item.title}}" bindtap="openPopup">体验</button>
-                    </view>
+        </view>
+        <view class="text ui-col ui-col-align-left align-left valign-middle" style="padding-left: 10px; padding-right: 10px;">
+          <view class="ui-col-content align-left valign-middle">
+            <view style="width: 100%;">
+              <view class="ui-row" style="height:30px;">
+                <view class="ui-col ui-col-align-left align-left valign-middle" style="">
+                  <view class="ui-col-content align-left valign-middle">
+                    <text>{{columeId.title}}</text>
                   </view>
                 </view>
-                <view style="width:70%">{{item.desc}}</view>
+                <view class="ui-col ui-col-align-right align-right valign-middle" style="padding-right: 10px;flex:0 0 100px;">
+                  <view class="ui-col-content align-right valign-middle">
+                    <button class="userin" data-show="{{ true }}" data-title="{{columeId.id}}" bindtap="openPopup">体验</button>
+                  </view>
+                </view>
               </view>
+              <view style="width:70%">{{columeId.desc}}</view>
             </view>
           </view>
         </view>
-      </block>
+      </view>
     </view>
   </swiper-item>
-  <swiper-item>
-  </swiper-item>
-  <swiper-item>
-
-
-  </swiper-item>
-
 </swiper>
-<view wx:for="{{column11}}">
-  <ui-popup show="{{ item.show }}" height="270" bindhide="maskhide" background="transparent" _pid="{{_pid}}">
-    <view class="popup">
-      <view class="ui-row ui-row-border-bottom" style="height:40px;">
-        <view class="ui-col valign-middle" style="padding-left: 20px;">
-          <view class="ui-col-content valign-middle">{{item.title}}</view>
+<!-- 弹框 -->
+<view wx:for="{{column}}" wx:key="unique">
+  <view wx:for="{{item.content}}" wx:key="unique" wx:for-item="itemContent">
+    <ui-popup show="{{itemContent.show }}" height="270" bindhide="maskhide" background="transparent" _pid="{{_pid}}">
+      <view class="popup">
+        <view class="ui-row ui-row-border-bottom" style="height:40px;">
+          <view class="ui-col valign-middle" style="padding-left: 20px;">
+            <view class="ui-col-content valign-middle">{{itemContent.title}}</view>
+          </view>
+          <view data="{{column11}}" bindtap="handleShow" class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 40px;">
+            <view class="ui-col-content align-center valign-middle">
+              <span type="x" size="18" color="#FC8950" class="ui-icon icon-x" style="color: #FC8950;font-size: 18px;"></span>
+            </view>
+          </view>
         </view>
-        <view bindtap="handleShow" class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 40px;">
-          <view class="ui-col-content align-center valign-middle">
-            <span type="x" size="18" color="#FC8950" class="ui-icon icon-x" style="color: #FC8950;font-size: 18px;"></span>
+        <view class="title" height="600">{{itemContent.desc}}</view>
+        <view class="ui-row" style="height:300px;">
+          <view class="view_img">
+            <!-- 二维码点击预览，识别 -->
+            <image style="width: 150px; height: 150px; background-color: #eeeeee;" class="img" bindtap="previewImage" src="{{itemContent.qrcode_src}}" data-src="{{itemContent.qrcode_src}}" />
           </view>
         </view>
       </view>
-      <view class="title" height="600">{{item.desc}}</view>
-      <view class="ui-row" style="height:300px;">
-        <view class="view_img">
-          <image style="width: 150px; height: 150px; background-color: #eeeeee;" class="img" bindtap="previewImage" src="{{item.QRcode_src}}" data-src="{{item.QRcode_src}}" />
-        </view>
-      </view>
-    </view>
-  </ui-popup>
+    </ui-popup>
+  </view>
 </view>
